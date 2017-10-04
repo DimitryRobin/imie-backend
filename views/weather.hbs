@@ -1,0 +1,24 @@
+<h1>Current Weather</h1>
+</br>
+{{> menu}}
+</br></br></br>
+Id : {{data.id}}
+</br>
+Ville : {{data.name}}
+</br>
+Pays : {{data.sys.country}}
+</br></br>
+<u>Coordonnées</u>
+</br>
+<li>Longitude : {{data.coord.lon}}</li>
+<li>Latitude : {{data.coord.lat}}</li>
+</br>
+Humidité : {{data.main.humidity}} %
+</br>
+Pression : {{data.main.pressure}}
+</br></br>
+<u>Vent</u>
+</br>
+<li>Vitesse : {{data.wind.speed}}</li>
+<li>Degré : {{data.wind.deg}}</li>
+</br>
