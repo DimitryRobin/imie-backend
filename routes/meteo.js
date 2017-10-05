@@ -10,6 +10,22 @@ var fbResponse ='';
 var jsonText = '';
 
 router.get('/', function(req, res, next) {
+    getMeteo(49);
+    setTimeout(function() {
+        res.render('meteo', { place: 'meteofr', data: fbResponse, json: jsonText } );
+    }, 500);
+});
+
+router.post("/", function (req, res) {
+    getMeteo(req.body.departement);
+    setTimeout(function() {
+        res.render('meteo', { place: 'meteofr', data: fbResponse, json: jsonText } );
+    }, 500);
+});
+
+module.exports = router;
+
+function getMeteo(departement) {
     http.get(url, function(res) {
         var body = '';
 
@@ -27,7 +43,4 @@ router.get('/', function(req, res, next) {
     }).on('error', function(e) {
         logger.error("Got an error: ", e);
     });
-    res.render('meteo', { place: 'meteofr', data: fbResponse, json: jsonText } );
-});
-
-module.exports = router;
+}

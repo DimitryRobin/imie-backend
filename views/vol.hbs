@@ -1,23 +1,43 @@
-<h1>Vol</h1>
+<center>
+	<h1>Vol de vélo</h1>
+	{{> menu}}
+	</br>
+	<h1>Vol</h1>
 <br>
 	<form id='volForm' style='font-size: 15pt;' method="post">
 		<input name='name' type='textbox' placeholder='Nom' />
 		<input name='author' type='textbox' placeholder='Auteur (du crime)' />
 		<button id="search" type="submit" >Go</button>
 	</form>
+	<div style='font-size: 15pt; width: 100%'>
+		<div id='dataTraitees'>
+			<p>
+				<b>Données traitées</b>
+			</p>
+		</div>
+		<div id='jsonTraitees'>
+			<p>
+				<b>JSON</b>
+			</p>
+		</div>
+	</div>
+</center>
 <br>
-<div style="width:50%;height:500px;overflow: auto;float:left;">
-<ul >
-{{#each data}}
-<br>
-<hr size=3px>
-<li>Nom :{{nom}}</li>
-<li>Auteur :{{auteur}}</li>
-<li>Date :{{date}}</li>
-<hr size=3px>
-{{/each}}
-</ul>
+<div style='overflow: auto; height: 450px;' id='dataTraitees'>
+	<p>
+		<ul >
+			{{#each data}}
+				<hr size=3px>
+				<li>Nom :{{nom}}</li>
+				<li>Auteur :{{auteur}}</li>
+				<li>Date :{{date}}</li>
+				<hr size=3px>
+			{{/each}}
+		</ul>
+	</p>
 </div>
-<div style="width:50%;height:500px;overflow: auto; float:right;">
-{{json}}
+<div style='overflow: auto; height: 450px;' id='jsonTraitees'>
+	<p>
+		{{json}}
+	</p>
 </div>

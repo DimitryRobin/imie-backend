@@ -39,9 +39,8 @@ router.get('/', function (req, res, next) {
             datas[i] = ({'nom': vol.name, 'auteur': vol.author, 'date': vol.date})
             logger.info("Got a response: ", datas);
         }
-        res.render('vol', {place :'vol',data: datas, json: JSON.stringify(datas)});
+        res.render('vol', { place :'vol', data: datas, json: JSON.stringify(datas) });
     });
-
 });
 
 router.post('/', function (req, res, next) {
@@ -59,7 +58,7 @@ router.post('/', function (req, res, next) {
         }
 
         console.log('Vol ajouté avec succès !');
-        res.render('vol',{ place: 'vol' ,data: datas, json: JSON.stringify(datas)});
+        res.render('vol',{ place: 'vol', data: datas, json: JSON.stringify(datas) });
     });
 });
 

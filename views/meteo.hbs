@@ -1,13 +1,17 @@
 <center>
 	<h1>Météo France</h1>
 	{{> menu}}
-	</br></br>
+	</br>
 	<ul style="list-style: none;">
 		<li>Date début : {{data.SIV_MENHIR.$.dateDebutTU}}</li>
 		<li>Date fin : {{data.SIV_MENHIR.$.dateFinTU}}</li>
 		<li>Date d'export : {{data.SIV_MENHIR.$.dateExportTU}}</li>
 	</ul>
 	<br>
+	<form id='departForm' style='font-size: 15pt;' method="post">
+		<input name='departement' type='textbox' placeholder='Numéro du département' disabled/>
+		<button id="search" type="submit" disabled>Go</button>
+	</form>
 	<div style='font-size: 15pt; width: 100%'>
 		<div id='dataTraitees'>
 			<p>

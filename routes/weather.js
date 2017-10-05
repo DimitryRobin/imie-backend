@@ -7,8 +7,10 @@ var http = require('http');
 var fbResponse = '';
 
 router.get('/', function(req, res, next) {
-	getMeteo('Angers');
-	res.render('weather', { place: 'weather', city: 'Angers', data: fbResponse, json: JSON.stringify(fbResponse) } );
+	getMeteo("Angers");
+	setTimeout(function() {
+		res.render('weather', { place: 'weather', city: 'Angers', data: fbResponse, json: JSON.stringify(fbResponse) } )
+	}, 500);
 });
 
 router.post("/", function (req, res) {
