@@ -5,7 +5,7 @@ var logger = log4js.getLogger();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home' });
+  res.render('index', { place: 'home', title: 'Home' });
 });
 
 module.exports = router;

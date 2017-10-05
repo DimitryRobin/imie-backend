@@ -1,8 +1,23 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+#dataTraitees {
+	margin-left: 20px; 
+	float: left;
+	width: 48%; 
+	border:1px solid black; 
+	word-wrap: break-word;
 }
 
-a {
-  color: #00B7FF;
+#jsonTraitees {
+	margin-left: 20px;
+	margin-right: 20px; 
+	float: left; 
+	width: 48%; 
+	border:1px solid black; 
+	word-wrap: break-word;
+}
+
+#dataTraitees p, 
+#jsonTraitees p {
+	margin-top: 10px; 
+	margin-left: 10px; 
+	margin-right: 10px;
 }

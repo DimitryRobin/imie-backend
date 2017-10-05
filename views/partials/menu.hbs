@@ -1,17 +1,33 @@
-<table>
-	<ul>
-		<a href='/'>Back to Home</a>
-	</ul>
-	<ul>
-		<a href='weather'>Open Weather Map</a>
-	</ul>
-	<ul>
-		<a href='meteo'>Méteo France</a>
-	</ul>
-	<ul>
-		<a href='pollution'>Pollution</a>
-	</ul>
-	<ul>
-		<a href='vol'>Vol de vélo</a>
-	</ul>
-</table>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<link href="../stylesheets/style.css" rel="stylesheet" />
+
+<center>
+	<table style="width:70%">
+		<tr>
+			<th>
+				<a {{#ifvalue place value="home" }} style='color: black' {{/ifvalue}} href='/'>Back to Home</a>
+			</th>
+			<th>
+				<a {{#ifvalue place value="weather" }} style='color: black' {{/ifvalue}} href='weather'>Open Weather Map</a>
+			</th>
+			<th>
+				<a {{#ifvalue place value="meteofr" }} style='color: black' {{/ifvalue}} href='meteo'>Méteo France</a>
+			</th>
+			<th>
+				<a {{#ifvalue place value="pollution" }} style='color: black' {{/ifvalue}} href='pollution'>Pollution</a>
+			</th>
+			<th>
+				<a {{#ifvalue place value="volvelo" }} style='color: black' {{/ifvalue}} href='vol'>Vol de vélo</a>
+			</th>
+		</tr>
+	</table>
+</center>

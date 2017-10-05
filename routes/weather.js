@@ -4,10 +4,25 @@ var log4js = require('log4js');
 var logger = log4js.getLogger();
 var http = require('http');
 
-var url = 'http://samples.openweathermap.org/data/2.5/weather?q=Angers,fr&appid=55348de45dedcf1f3a556544df360bc7';
-var fbResponse ='';
+var fbResponse = '';
 
 router.get('/', function(req, res, next) {
+	getMeteo('Angers');
+	res.render('weather', { place: 'weather', city: 'Angers', data: fbResponse, json: JSON.stringify(fbResponse) } );
+});
+
+router.post("/", function (req, res) {
+	getMeteo(req.body.city);
+	setTimeout(function() {
+		res.render('weather', { place: 'weather', city: req.body.city, data: fbResponse, json: JSON.stringify(fbResponse) } )
+	}, 500);
+});
+
+module.exports = router;
+
+function getMeteo(city) {
+	var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=55348de45dedcf1f3a556544df360bc7';
+	
 	http.get(url, function(res) {
 	    var body = '';
 
@@ -17,12 +32,9 @@ router.get('/', function(req, res, next) {
 
 	    res.on('end', function() {
 	        fbResponse = JSON.parse(body);
-	        logger.info("Got a response: ", fbResponse);
+	logger.info("Got a response: ", fbResponse);
 	    });
 	}).on('error', function(e) {
 	      logger.error("Got an error: ", e);
 	});
-	res.render('weather', { data: fbResponse } );
-});
-
-module.exports = router;
+}
