@@ -1,0 +1,26 @@
+<h1>Météo France</h1>
+<br>
+
+<ul>
+<li>Date début : {{data.SIV_MENHIR.$.dateDebutTU}}</li>
+<li>Date fin : {{data.SIV_MENHIR.$.dateFinTU}}</li>
+<li>Date d'export : {{data.SIV_MENHIR.$.dateExportTU}}</li>
+</ul>
+<br>
+<div style="width:50%;height:500px;overflow: auto;float:left;">
+<ul >
+{{#each data.SIV_MENHIR.PHENOMENE}}
+<br>
+<hr size=3px>
+<li>Département :{{$.departement}}</li>
+<li>Phenomene :{{$.phenomene}}</li>
+<li>Couleur :{{$.couleur}}</li>
+<li>Date Debut EvtTU :{{$.dateDebutEvtTU}}</li>
+<li>Date Fin EvtTU :{{$.dateFinEvtTU}}</li>
+<hr size=3px>
+{{/each}}
+</ul>
+</div>
+<div style="width:50%;height:500px;overflow: auto; float:right;">
+{{json}}
+</div>
