@@ -17,6 +17,7 @@ log4js.configure({
 var index = require('./routes/index');
 var weather = require('./routes/weather');
 var meteo = require('./routes/meteo');
+var pollution = require('./routes/pollution');
 
 var app = express();
 app.use(helmet());
@@ -46,6 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/weather', weather);
 app.use('/meteo', meteo);
+app.use('/pollution', pollution);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

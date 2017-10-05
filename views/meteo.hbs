@@ -1,26 +1,43 @@
-<h1>Météo France</h1>
-<br>
-
-<ul>
-<li>Date début : {{data.SIV_MENHIR.$.dateDebutTU}}</li>
-<li>Date fin : {{data.SIV_MENHIR.$.dateFinTU}}</li>
-<li>Date d'export : {{data.SIV_MENHIR.$.dateExportTU}}</li>
-</ul>
-<br>
-<div style="width:50%;height:500px;overflow: auto;float:left;">
-<ul >
-{{#each data.SIV_MENHIR.PHENOMENE}}
-<br>
-<hr size=3px>
-<li>Département :{{$.departement}}</li>
-<li>Phenomene :{{$.phenomene}}</li>
-<li>Couleur :{{$.couleur}}</li>
-<li>Date Debut EvtTU :{{$.dateDebutEvtTU}}</li>
-<li>Date Fin EvtTU :{{$.dateFinEvtTU}}</li>
-<hr size=3px>
-{{/each}}
-</ul>
+<center>
+	<h1>Météo France</h1>
+	{{> menu}}
+	</br></br>
+	<ul style="list-style: none;">
+		<li>Date début : {{data.SIV_MENHIR.$.dateDebutTU}}</li>
+		<li>Date fin : {{data.SIV_MENHIR.$.dateFinTU}}</li>
+		<li>Date d'export : {{data.SIV_MENHIR.$.dateExportTU}}</li>
+	</ul>
+	<br>
+	<div style='font-size: 15pt; width: 100%'>
+		<div id='dataTraitees'>
+			<p>
+				<b>Données traitées</b>
+			</p>
+		</div>
+		<div id='jsonTraitees'>
+			<p>
+				<b>JSON</b>
+			</p>
+		</div>
+	</div>
+</center>
+<div style='overflow: auto; height: 450px;' id='dataTraitees'>
+	<p>
+		<ul >
+			{{#each data.SIV_MENHIR.PHENOMENE}}
+				<hr size=3px>
+					<li>Département :{{$.departement}}</li>
+					<li>Phenomene :{{$.phenomene}}</li>
+					<li>Couleur :{{$.couleur}}</li>
+					<li>Date Debut EvtTU :{{$.dateDebutEvtTU}}</li>
+					<li>Date Fin EvtTU :{{$.dateFinEvtTU}}</li>
+				<hr size=3px>
+			{{/each}}
+		</ul>
+	</p>
 </div>
-<div style="width:50%;height:500px;overflow: auto; float:right;">
-{{json}}
+<div style='overflow: auto; height: 450px;' id='jsonTraitees'>
+	<p>
+		{{json}}
+	</p>
 </div>

@@ -22,13 +22,12 @@ router.get('/', function(req, res, next) {
                 fbResponse = result;
             });
             jsonText = JSON.stringify(fbResponse);
-            logger.info("Got a response: ", jsonText);
+            // logger.info("Got a response: ", jsonText);
         });
     }).on('error', function(e) {
         logger.error("Got an error: ", e);
     });
-    res.render('meteo', { data: fbResponse, json: jsonText } );
+    res.render('meteo', { place: 'meteofr', data: fbResponse, json: jsonText } );
 });
-
 
 module.exports = router;
