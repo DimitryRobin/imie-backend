@@ -17,20 +17,12 @@ log4js.configure({
 var index = require('./routes/index');
 var weather = require('./routes/weather');
 var meteo = require('./routes/meteo');
-var pollution = require('./routes/pollution');
+var vol = require('./routes/vol');
 
 var app = express();
 app.use(helmet());
 
 hbs.registerPartials(__dirname + '/views/partials');
-
-hbs.registerHelper('ifvalue', function (conditional, options) {
-  if (options.hash.value === conditional) {
-    return options.fn(this)
-  } else {
-    return options.inverse(this);
-  }
-});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -47,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/weather', weather);
 app.use('/meteo', meteo);
-app.use('/pollution', pollution);
+app.use('/vol', vol);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
